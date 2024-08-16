@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="finishBg"></div>
+    <div class="content">
+      <h1>Отгадай 3 загадки и твоя жизнь изменится!</h1>
+      <div class="container">
+        <button class="btn" id="start">Начать</button>
+      </div>
+      <div class="res hide">
+        <div class="resTitle">результат</div>
+        <div class="resContainer">
+          <i class="resItem hide" id="res1">меня</i>
+          <i class="resItem hide" id="res2">за</i>
+          <i class="resItem hide" id="res3">выйти</i>
+          <i class="resItem">?</i>
+          <i class="resItem">выйдешь</i>
+        </div>
+      </div>
+      <div class="info hide">
+        Ответ для загадок спрятан а сказке. Найди нужное слово и кликни по мену
+      </div>
+      <blockquote class="question hide" id="q1">
+        <h3>Вопрос №1 <i>(ответ в 3 абзаце)</i></h3>
+        <br />
+        Всегда вместе на пути, <br />
+        Всегда со мной, ни шагу в стороне,<br />
+        Три буквы, одно слово –<br />
+        Кто же это? Разве не знаешь ты?<br />
+        Тебя люблю, скажи мне скорей,<br />
+        Что за слово я загадал сейчас я? 😊❓<br />
+      </blockquote>
+      <blockquote class="question hide" id="q2">
+        <h3>Вопрос №2 <i>(ответ в 1 и 2 абзаце)</i></h3>
+        <br />
+        Что я должен сделать, чтобы снаружи быть? <br />
+        Сама дверь не отворится, подскажу я тебе. <br />
+        Поиски несложные, приступай без терзаний. <br />
+        Отгадай шараду и свободу получи ты! 🚪🔑❓
+      </blockquote>
+      <blockquote class="question hide" id="q3">
+        <h3>Вопрос №3 (ответ во 2 абзаце)</h3>
+        <br />
+        По дороге ты идешь, в темноте неуверенно, <br />
+        Шаг за шагом вперед, но ощущаешь преграду незримо. <br />
+        Что-то тянет назад, словно путаница в умах, <br />
+        Но найди силу и пробейся к свету сквозь это... <br />
+        Какое слово я тебе загадал, говори скорей, <br />
+        За чем идешь, чего цель твоя, скажи мне ясно? 🌟❓
+      </blockquote>
+      <div class="text hide">
+        <p>
+          Жили-были в глубоком лесу енот и сова. Енот был маленьким и озорным,
+          всегда радовал других своими шалостями. А сова была мудрой и тихой,
+          она наблюдала <span class="answ2">за</span> всеми с вершины дерева.
+          Енот и сова встречались каждый день, обменивались улыбками и шутками.
+        </p>
+        <p>
+          Однажды, весной, сова решила <span class="answ3">выйти</span>
+          <span class="answ2">за</span> енота. Она была уверена, что в еноте
+          есть что-то особенное. Сова стала все чаще задерживаться у его норы,
+          прислушивалась к каждому его слову. И вот однажды, сова не выдержала и
+          призналась еноту в своих чувствах.
+        </p>
+        <p>
+          "Енот, ты особенный для <span class="answ1">меня</span>. Твоя
+          игривость и смех захватывают <span class="answ1">меня</span>
+          духом. Я хотела бы проводить все время с тобой", сказала сова, ее
+          глаза светились от волнения. Енот улыбнулся и тихо ответил: "Сова, я
+          тоже чувствую особенное в нашей дружбе. Мы с тобой так похожи и так
+          дополняем друг друга."
+        </p>
+        <p>
+          С тех пор енот и сова стали неразлучными друзьями. Они проводили дни
+          весело играя вместе и охраняли друг друга. Вечерами они сидели на
+          ветке дерева, смотрели на звезды и слушали шум леса. Енот и сова
+          поняли, что их сближение – это особенное и неповторимое событие.
+        </p>
+        <p>
+          Так, в сказочном лесу, енот и сова полюбили друг друга и доказали, что
+          разница может быть прекрасной и взаимодополняющей. Любовь не знает
+          границ и форм, она просто находит дорогу к сердцу того, кто его ищет.
+          ❤️🦝🦉
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url(https://img.freepik.com/free-vector/pastel-ombre-background-in-pink-and-purple_53876-120750.jpg?w=1800&t=st=1690143246~exp=1690143846~hmac=ed600aa5e5519106637f2850138240f7a0a8b1778a58c08ca0448b4d8824d32e);
+    background-size: cover;
+    min-height: 100vh;
+  }
+  body * {
+    box-sizing: border-box;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 24px;
+    padding: 0 16px;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .btn {
+    width: 140px;
+    height: 40px;
+    background: #1b47ff;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+  }
+  .text {
+    padding: 16px;
+  }
+  .hide {
+    display: none;
+  }
+  .res {
+    padding: 0 16px;
+  }
+  .resContainer {
+    padding: 5px;
+    border: 1px solid #1b47ff;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    height: 25px;
+    position: relative;
+  }
+  .info {
+    color: gray;
+    font-size: 14px;
+    padding: 0 16px;
+    margin-bottom: 10px;
+  }
+  .question {
+    font-weight: bold;
+  }
+  .resItem {
+    margin-right: 10px;
+    transition: all 1s;
+  }
+  .resItem {
+    position: absolute;
+  }
+  .resItem:nth-child(1) {
+    left: 5px;
+    top: 1px;
+  }
+  .resItem:nth-child(2) {
+    left: 45px;
+    top: 1px;
+  }
+  .resItem:nth-child(3) {
+    left: 70px;
+    top: 1px;
+  }
+  .resItem:nth-child(4) {
+    opacity: 0;
+    left: 225px;
+    top: 1px;
+  }
+  .resItem:nth-child(5) {
+    opacity: 0;
+    left: 70px;
+    top: 1px;
+  }
+  .resFinish .resContainer {
+    border: none !important;
+  }
+  .resFinish .resItem {
+    font-size: 30px;
+  }
+  .resFinish .resItem:nth-child(1) {
+    left: 155px;
+  }
+  .resFinish .resItem:nth-child(2) {
+    left: 120px;
+  }
+  .resFinish .resItem:nth-child(3) {
+    opacity: 0;
+  }
+  .resFinish .resItem:nth-child(4) {
+    opacity: 1;
+  }
+  .resFinish .resItem:nth-child(5) {
+    opacity: 1;
+    left: 0;
+  }
+  .finishBg {
+    transition: 1s;
+    background-image: url(https://www.fonstola.ru/pic/201201/640x480/fonstola.ru_67518.jpg);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-size: cover;
+    opacity: 0;
+  }
+  .resFinish * {
+    color: #fff;
+  }
+  .resFinish .finishBg {
+    opacity: 1;
+  }
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Data
+    let step = 1;
+    const btnStart = document.querySelector("#start");
+    const res = document.querySelector(".res");
+    const res1 = document.querySelector("#res1");
+    const res2 = document.querySelector("#res2");
+    const res3 = document.querySelector("#res3");
+    const info = document.querySelector(".info");
+    const q1 = document.querySelector("#q1");
+    const q2 = document.querySelector("#q2");
+    const q3 = document.querySelector("#q3");
+    const text = document.querySelector(".text");
+    const answ1 = document.querySelector(".answ1");
+    const answ2 = document.querySelectorAll(".answ2");
+    const answ3 = document.querySelector(".answ3");
+    const resTitle = document.querySelector(".resTitle");
+    const body = document.querySelector("body");
+
+    // Methods
+    const start = () => {
+      btnStart.classList.add("hide");
+      res.classList.remove("hide");
+      info.classList.remove("hide");
+      q1.classList.remove("hide");
+      text.classList.remove("hide");
+    };
+
+    const finish = () => {
+      body.classList.add("resFinish");
+    };
+
+    const answear1 = () => {
+      if (step === 1) {
+        q1.classList.add("hide");
+        q2.classList.remove("hide");
+        res1.classList.remove("hide");
+        step++;
+      }
+    };
+
+    const answear2 = () => {
+      if (step === 2) {
+        q2.classList.add("hide");
+        q3.classList.remove("hide");
+        res2.classList.remove("hide");
+        step++;
+      }
+    };
+
+    const answear3 = () => {
+      if (step === 3) {
+        res3.classList.remove("hide");
+        q3.classList.add("hide");
+        info.classList.add("hide");
+        text.classList.add("hide");
+        resTitle.classList.add("hide");
+        step++;
+        setTimeout(() => {
+          finish();
+        }, 2000);
+      }
+    };
+
+    // ...
+    btnStart.addEventListener("click", start);
+    answ1.addEventListener("click", answear1);
+    answ2.forEach((i) => {
+      i.addEventListener("click", answear2);
+    });
+    answ3.addEventListener("click", answear3);
+  });
+</script>
