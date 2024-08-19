@@ -23,7 +23,7 @@ const listElement = document.querySelector('.list');
         const productLi = document.createElement('li');
           productLi.classList.add('product-item');
           productLi.innerHTML = `
-            <img class="product-img" src="./../img/${product.image}.webp" alt="${product.name}" />
+            <img class="product-img" src="https://johnny-24.github.io/sweet-home/src/img/${product.image}.webp" alt="${product.name}" />
             <span class="product-title">${product.name}</span>
           `;
           ulProduct.appendChild(productLi);
