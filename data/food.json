@@ -4,7 +4,7 @@
     "products": [
       {
         "name": "Грузинский суп",
-        "image": "/src/img/soup.png"
+        "image": "soup"
       }
     ]
   }
