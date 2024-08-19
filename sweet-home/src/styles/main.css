@@ -2,11 +2,11 @@
 
 body {
   margin: 0;
-  background-image: url('./../img/kitchen-desk-bg.jpeg');
+  background-image: url('./../img/kitchen-desk-bg.webp');
   background-position: center;
   background-size: cover;
   @media(max-width: 700px) {
-    background-image: url('./../img/kitchen-mob-bg.jpeg');
+    background-image: url('./../img/kitchen-mob-bg.webp');
   }
 }
 
@@ -104,4 +104,12 @@ body * {
   margin-bottom: 20px;
   text-align: center;
   text-shadow: 0px 0px 3px white;
+}
+
+.maria {
+  width: 30%;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
 }

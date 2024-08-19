@@ -5,7 +5,7 @@ const listElement = document.querySelector('.list');
 
 
 
-  fetch('https://johnny-24.github.io/data/food.json')
+  fetch('./../food.json')
   .then(response => response.json())
   .then(list => {
     list.forEach(item => {
@@ -23,7 +23,7 @@ const listElement = document.querySelector('.list');
         const productLi = document.createElement('li');
           productLi.classList.add('product-item');
           productLi.innerHTML = `
-            <img class="product-img" src="${product.image}" alt="${product.name}" />
+            <img class="product-img" src="./../img/${product.image}.webp" alt="${product.name}" />
             <span class="product-title">${product.name}</span>
           `;
           ulProduct.appendChild(productLi);
