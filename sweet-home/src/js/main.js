@@ -5,7 +5,7 @@ const listElement = document.querySelector('.list');
 
 
 
-  fetch('./../food.json')
+  fetch('https://johnny-24.github.io/data/food.json')
   .then(response => response.json())
   .then(list => {
     list.forEach(item => {
