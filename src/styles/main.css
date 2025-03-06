@@ -120,6 +120,10 @@ body * {
   Grid-row-gap: 50px;
 }
 
+.topics__item {
+  position: relative;
+}
+
 .topics__image {
   width: 100%;
   margin-bottom: 15px;
@@ -150,4 +154,42 @@ body * {
   color: #6C757D;
   font-size: 12px;
   line-height: 20px;
+}
+
+.badges-list {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge {
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,.2);
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+
+.footer {
+  background: #212529;
+}
+
+.footer__container {
+  padding-top: 105px;
+  padding-bottom: 105px;
+}
+
+.footer__copyright {
+  padding: 30px 0;
+  background: #343A40;
+}
+
+.footer__text {
+  color: #E5E5E5;
+  font-weight: 600;
+  font-size: 14px;
 }
