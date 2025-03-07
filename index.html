@@ -11,6 +11,7 @@
   <title>Johnnyk24 - Главная</title>
 </head>
 <body>
+
   <header class="header">
     <div class="container header__container">
       <a href="/" class="logo">
@@ -39,10 +40,29 @@
             <a href="/" class="header-social__link"><i class="fa-brands fa-instagram"></i></a>
           </li>
         </ul>
+
+        <button class="burger"></button>
     </div>
   </header>
 
   <main class="main">
+    <div class="mobile-menu">
+      <div class="mobile-menu__content">
+        <button class="mobile-menu__close"></button>
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">Главная</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">Статьи</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="#" class="mobile-menu__link">Обо мне</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <section class="section main-block">
       <div class="container">
         <h1 class="main-block__title">
@@ -222,5 +242,7 @@
       </div>
     </footer>
   </main>
+
+  <script src="./src/js/main.js"></script>
 </body>
 </html>
