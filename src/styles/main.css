@@ -137,6 +137,8 @@ body * {
 
 .topics__image {
   width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .topics__content {
@@ -413,6 +415,119 @@ body * {
   width: 20px;
   height: 2px;
   background: #000;
+}
+
+.detail-main-block {
+  height: 600px;
+  background: url('./../img/detail-main-bg.jpg');
+  background-size: cover;
+  display: flex;
+  padding-top: 80px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-main-block__title {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 55px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.detail-main-block__badges {
+  display: flex;
+  align-items: center;
+}
+
+.detail-main-block__badge {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.15);
+  margin: 0 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.detail-main-block__description {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.content-info {
+  display: flex;
+  border-bottom: 1px solid #d1d1d1;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.content-info__img {
+  width: 300px;
+  border-radius: 8px;
+  margin-right: 30px;
+  height: fit-content;
+}
+
+.content-info__title {
+  color: #495057;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  line-height: 32px;
+}
+
+.content-info__description {
+  color: #495057;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.content-comment {
+  color: #495057;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
+blockquote {
+  color: #495057;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 30px;
+  padding-left: 25px;
+  border-left: 2px solid #D4A373;
+}
+
+blockquote time {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #868E96;
+  margin-bottom: 15px;
+}
+
+blockquote p {
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+blockquote img {
+  margin: 0 auto 15px auto;
+  width: 300px;
+  display: block;
 }
 
 @media(max-width: 1024px) {
