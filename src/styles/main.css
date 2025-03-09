@@ -524,6 +524,12 @@ blockquote p {
   font-style: italic;
 }
 
+blockquote h3 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
 blockquote img {
   margin: 0 auto 15px auto;
   width: 300px;
