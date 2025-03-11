@@ -1,0 +1,25 @@
+{{> mobile-menu}}
+
+
+tut
+  {{#if @root.isAuth}}
+    Ты авторизован
+  {{/if}}
+
+{{!-- {{#each articles}}
+  <div>
+    <h2>{{ this.title }}</h2>
+    <p>{{ this.description }}</p>
+    <p>Теги:
+      {{#each this.tags}}
+        {{ this }}
+        {{#unless @last}},{{/unless}}
+      {{/each}}
+    </p>
+  </div>
+{{/each}} --}}
+
+{{> latest-articles}}
+
+{{> article-section}}
+{{> popular-section}}

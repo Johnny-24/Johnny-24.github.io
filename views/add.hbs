@@ -1,0 +1,9 @@
+<h1>Add</h1>
+
+<form action="/add" method="post">
+<label for="name">name</label>
+<input type="text" name="name" id="name">
+
+<input type="hidden" name="_csrf" value="{{@root.csrf}}">
+<button>save</button>
+</form>

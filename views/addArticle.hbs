@@ -1,0 +1,18 @@
+add article
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form action="addArticle" method="post">
+  <input type="text" name="title">
+  <textarea class="" name="description"></textarea>
+  <textarea class="content" name="content"></textarea>
+
+  <input type="hidden" name="_csrf" value="{{@root.csrf}}">
+  <button>save</button>
+</form>

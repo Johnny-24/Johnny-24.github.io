@@ -1,0 +1,54 @@
+      {{!-- <nav class="header-nav">
+        <ul class="header-nav__list">
+          {{#if isHome}}
+            <li class="header-nav__item isActive">
+              <a href="/" class="header-nav__link">Главная</a>
+            </li>
+          {{else}}
+            <li class="header-nav__item">
+              <a href="/" class="header-nav__link">Главная</a>
+            </li>
+          {{/if}}
+
+          {{#if isArticles}}
+            <li class="header-nav__item isActive">
+              <a href="/articles" class="header-nav__link">Статьи</a>
+            </li>
+          {{else}}
+            <li class="header-nav__item">
+              <a href="/articles" class="header-nav__link">Статьи</a>
+            </li>
+          {{/if}}
+
+          {{#if isAbout}}
+            <li class="header-nav__item isActive">
+              <a href="/about" class="header-nav__link">Обо мне</a>
+            </li>
+          {{else}}
+            <li class="header-nav__item">
+              <a href="/about" class="header-nav__link">Обо мне</a>
+            </li>
+          {{/if}}
+        </ul>
+      </nav> --}}
+
+    <ul class="nav nav-pills">
+      {{#if isHome}}
+        <li><a href="/" class="nav-link px-2 text-secondary">Главная</a></li>
+      {{else}}
+        <li><a href="/" class="nav-link px-2 text-white">Главная</a></li>
+      {{/if}}
+
+      {{#if isArticles}}
+        <li><a href="/articles" class="nav-link px-2 text-secondary" aria-current="page">Статьи</a></li>
+      {{else}}
+        <li><a href="/articles" class="nav-link px-2 text-white">Статьи</a></li>
+      {{/if}}
+
+      {{#if isAbout}}
+        <li><a href="/about" class="nav-link px-2 text-secondary" aria-current="page">Обо мне</a></li>
+      {{else}}
+        <li><a href="/about" class="nav-link px-2 text-white">Обо мне</a></li>
+      {{/if}}
+
+    </ul>
