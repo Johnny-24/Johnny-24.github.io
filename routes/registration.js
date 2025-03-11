@@ -5,9 +5,11 @@ const bcrypt = require('bcryptjs');
 
 
 router.get('/', async (req, res) => {
-  res.render('registration', {
+  res.render('pages/registration', {
+    layout: 'authLayout',
     title: "Регистрация",
-    isRegister: true
+    isRegister: true,
+    isAuth: true
   });
 })
 

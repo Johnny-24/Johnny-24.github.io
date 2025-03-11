@@ -1,0 +1,43 @@
+{{!-- <form action="/registration" method="post">
+  <div>
+    <label for="email">Email</label>
+    <input type="email" name="email">
+  </div>
+
+  <div>
+    <label for="password">Пароль</label>
+    <input type="password" name="password">
+  </div>
+
+  <div>
+    <label for="confirm">Повторить пароль</label>
+    <input type="password" name="confirm">
+  </div>
+
+  <button>Войти</button>
+</form> --}}
+
+
+<form class="card p-4" style="max-width: 320px; width: 100%;">
+  <fieldset>
+    <legend class="text-center">Регистрация</legend>
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="email">
+      <div class="text-danger">
+        Please choose a username.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Пароль</label>
+      <input type="password" class="form-control" id="password">
+    </div>
+    <div class="mb-3">
+      <label for="confirm" class="form-label">Повторите пароль</label>
+      <input type="password" class="form-control" id="confirm">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+    </div>
+  </fieldset>
+</form>
