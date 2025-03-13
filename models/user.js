@@ -1,31 +1,22 @@
-const { Schema, model } = require('mongoose');
+const { DataTypes } = require('sequelize')
+const sequelize = require('./../config/db')
 
-const commentSchema = new Schema({
-  text: {
-    type: String,
-    required: true
+const User = sequelize.define('User', {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+    allowNull: false
   },
-  date: {
-    type: Date,
-    default: Date.now // Установить текущую дату по умолчанию
-  }
-});
-
-const userSchema = new Schema({
   email: {
-    type: String,
-    required: true
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true
   },
   password: {
-    type: String,
-    required: true
-  },
-  articles: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Article',
-    }
-  ]
+    type: DataTypes.STRING,
+    allowNull: false
+  }
 })
 
-module.exports = model('User', userSchema)
+module.exports = User

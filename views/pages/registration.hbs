@@ -1,43 +1,64 @@
-{{!-- <form action="/registration" method="post">
-  <div>
-    <label for="email">Email</label>
-    <input type="email" name="email">
-  </div>
-
-  <div>
-    <label for="password">Пароль</label>
-    <input type="password" name="password">
-  </div>
-
-  <div>
-    <label for="confirm">Повторить пароль</label>
-    <input type="password" name="confirm">
-  </div>
-
-  <button>Войти</button>
-</form> --}}
-
-
-<form class="card p-4" style="max-width: 320px; width: 100%;">
+<form class="card p-4 needs-validation" style="max-width: 320px; width: 100%;" action="/auth/registration" method="post" novalidate>
   <fieldset>
+    {{#if error}}
+      <div class="alert alert-danger" role="alert">
+        {{ error }}
+      </div>
+    {{/if}}
     <legend class="text-center">Регистрация</legend>
     <div class="mb-3">
       <label for="email" class="form-label">E-mail</label>
-      <input type="email" class="form-control" id="email">
-      <div class="text-danger">
-        Please choose a username.
+      <input type="email" class="form-control" id="email" name="email" required>
+      <div class="invalid-feedback">
+        Пожалуйста, введите действительный email.
       </div>
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Пароль</label>
-      <input type="password" class="form-control" id="password">
+      <input type="password" class="form-control" id="password" name="password" required>
+      <div class="invalid-feedback">
+        Пожалуйста, введите пароль.
+      </div>
     </div>
     <div class="mb-3">
       <label for="confirm" class="form-label">Повторите пароль</label>
-      <input type="password" class="form-control" id="confirm">
+      <input type="password" class="form-control" id="confirm" name="confirm" required>
+      <div class="invalid-feedback">
+        Пожалуйста, повторите пароль.
+      </div>
     </div>
     <div class="text-center">
+      <input type="hidden" name="_csrf" value="{{@root.csrf}}">
       <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
     </div>
   </fieldset>
 </form>
+
+<script>
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      var forms = document.getElementsByClassName('needs-validation');
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+
+  const passwordInput = document.getElementById('password');
+  const confirmPasswordInput = document.getElementById('confirm');
+
+  confirmPasswordInput.addEventListener('input', function() {
+    if (passwordInput.value !== confirmPasswordInput.value) {
+      confirmPasswordInput.setCustomValidity('Пароли не совпадают');
+    } else {
+      confirmPasswordInput.setCustomValidity('');
+    }
+  });
+</script>

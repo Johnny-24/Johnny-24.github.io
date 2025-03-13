@@ -1,23 +1,28 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const { Sequelize } = require('sequelize')
 const csrf = require('csurf');
 const flash = require('connect-flash');
 const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const exphbs = require('express-handlebars');
-const homeRouter = require('./routes/home.js');
-const articlesRouter = require('./routes/articles.js');
-const aboutRouter = require('./routes/about.js');
-const addRouter = require('./routes/add.js');
-const addSrticleRouter = require('./routes/addArticle.js');
-const loginRouter = require('./routes/login.js');
-const registrationRouter = require('./routes/registration.js');
-const MongoStore = require('connect-mongodb-session')(session);
-
-
-
 const varMiddleware = require('./middleware/variables');
+const fileUpload = require('express-fileupload');
 
-const { connectDB } = require('./db');
+const homeRouter = require('./routes/home.js');
+const authRouter = require('./routes/auth.js');
+
+const profileAdminRouter = require('./routes/profile.js');
+
+const uploadRouter = require('./routes/upload.js');
+
+// const articlesRouter = require('./routes/articles.js');
+// const aboutRouter = require('./routes/about.js');
+// const addRouter = require('./routes/add.js');
+// const addSrticleRouter = require('./routes/addArticle.js');
+// const loginRouter = require('./routes/login.js');
+
+
+
 
 const app = express();
 
@@ -26,9 +31,9 @@ const hbs = exphbs.create({
   extname: 'hbs'
 });
 
-const store = new MongoStore({
-  collection: 'sessions',
-  uri: 'mongodb://localhost:27017/blog'
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: "./session.sqlite"
 });
 
 app.engine('hbs', hbs.engine);
@@ -39,29 +44,32 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: "some secret",
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
   resave: false,
-  saveUninitialized: false,
-  store
+  proxy: true,
 }))
+app.use(fileUpload())
 app.use(csrf())
 app.use(flash())
 app.use(varMiddleware)
 
 app.use('/', homeRouter);
-app.use('/articles', articlesRouter);
-app.use('/about', aboutRouter);
-app.use('/add', addRouter);
-app.use('/addArticle', addSrticleRouter);
-app.use('/login', loginRouter);
-app.use('/registration', registrationRouter);
+app.use('/auth', authRouter);
+app.use('/admin', profileAdminRouter)
+app.use('/upload', uploadRouter);
+// app.use('/articles', articlesRouter);
+// app.use('/about', aboutRouter);
+// app.use('/add', addRouter);
+// app.use('/addArticle', addSrticleRouter);
+// app.use('/login', loginRouter);
 
 const port = process.env.PORT || 3000;
 
 
 const start = async () => {
   try {
-    const url = 'mongodb://localhost:27017/blog';
-    await mongoose.connect(url);
 
     // const article = new Article({
     //   title: 'Новая статья',
@@ -82,6 +90,9 @@ const start = async () => {
     //   })
     //   await user.save();
     // }
+    await sequelize.authenticate()
+    await sequelize.sync()
+
     app.listen(port, () => {
       console.log(`Server started on port ${port}`);
     });

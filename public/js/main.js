@@ -53,4 +53,34 @@ document.addEventListener('DOMContentLoaded', function(){
 
   });
 
+
+
+
+$('#uploadButton').click(function() {
+  const fileInput = $('#fileInput')[0];
+
+  if (!fileInput.files[0]) {
+    return alert('Файл не выбран!');
+  }
+
+  const formData = new FormData();
+  formData.append('file', fileInput.files[0]);
+  formData.append('_csrf', $('[name="_csrf"]').val());
+
+  $.ajax({
+    type: 'POST',
+    url: '/upload',
+    data: formData,
+    contentType: false,
+    processData: false,
+    success: function(data) {
+      console.log(data);
+    }
+  });
 });
+
+
+});
+
+
+
