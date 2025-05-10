@@ -1,22 +1,25 @@
 const {Router} = require('express');
 const router = Router();
+const homeController = require('./../controllers/homeController');
+
+router.get('/', homeController.index)
 
 // const Article = require('./../models/article');
 // const User = require('./../models/user');
 
 
-router.get('/', async (req, res) => {
+// router.get('/', async (req, res) => {
 
-  // const articles = await Article.find().lean();
-  // const users = await User.find().populate('articles').select('title');
+//   // const articles = await Article.find().lean();
+//   // const users = await User.find().populate('articles').select('title');
 
-  // console.log('users ---->', users)
+//   // console.log('users ---->', users)
 
-  res.render('index', {
-    title: "Главная страница",
-    isHome: true,
-    // articles
-  });
-})
+//   res.render('index', {
+//     title: "Главная страница",
+//     isHome: true,
+//     // articles
+//   });
+// })
 
 module.exports = router;

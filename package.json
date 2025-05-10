@@ -17,6 +17,7 @@
     "express-fileupload": "^1.5.1",
     "express-handlebars": "^8.0.1",
     "express-session": "^1.18.1",
+    "nunjucks": "^3.2.4",
     "sequelize": "^6.37.6",
     "sqlite3": "^5.1.7"
   },

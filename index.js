@@ -4,14 +4,21 @@ const csrf = require('csurf');
 const flash = require('connect-flash');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const exphbs = require('express-handlebars');
+const nunjucks = require('nunjucks');
 const varMiddleware = require('./middleware/variables');
 const fileUpload = require('express-fileupload');
 
-const homeRouter = require('./routes/home.js');
+// Auth Rourers
 const authRouter = require('./routes/auth.js');
 
-const profileAdminRouter = require('./routes/profile.js');
+// Main routes
+const homeRouter = require('./routes/home.js');
+
+// Admin Routes
+const dashboardRouter = require('./routes/admin/dashboard.js');
+const profileRouter = require('./routes/admin/profile.js');
+
+
 
 const uploadRouter = require('./routes/upload.js');
 
@@ -26,9 +33,10 @@ const uploadRouter = require('./routes/upload.js');
 
 const app = express();
 
-const hbs = exphbs.create({
-  defaultLayout: 'main',
-  extname: 'hbs'
+nunjucks.configure('views', {
+  autoescape: true,
+  watch: true,
+  express: app
 });
 
 const sequelize = new Sequelize({
@@ -36,8 +44,8 @@ const sequelize = new Sequelize({
   storage: "./session.sqlite"
 });
 
-app.engine('hbs', hbs.engine);
-app.set('view engine', 'hbs');
+app.engine('njk', nunjucks.render);
+app.set('view engine', 'njk');
 app.set('views', 'views');
 
 app.use(express.static('public'))
@@ -57,8 +65,9 @@ app.use(varMiddleware)
 
 app.use('/', homeRouter);
 app.use('/auth', authRouter);
-app.use('/admin', profileAdminRouter)
+app.use('/admin', profileRouter)
 app.use('/upload', uploadRouter);
+app.use('/admin', dashboardRouter);
 // app.use('/articles', articlesRouter);
 // app.use('/about', aboutRouter);
 // app.use('/add', addRouter);
