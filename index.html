@@ -4,126 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Челлендж 30 рисунков</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #fafafa;
-        margin: 20px;
-        color: #222;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0 15px;
-      }
-
-      /* Заголовок страницы */
-      h1 {
-        text-align: center;
-        font-weight: 600;
-        margin-bottom: 30px;
-        font-size: 2rem;
-        color: #333;
-      }
-
-      /* Обёртка для таблицы с адаптивной прокруткой */
-      .table-wrap {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* плавный скролл для iOS */
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-        background: white;
-        padding: 10px;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: fixed;
-        min-width: 600px; /* чтобы при малой ширине была прокрутка */
-      }
-
-      th,
-      td {
-        padding: 10px;
-        text-align: center;
-        vertical-align: top;
-        border: 1px solid #ddd;
-        word-wrap: break-word;
-      }
-
-      th {
-        background: #f0f0f0;
-        font-size: 1.2em;
-      }
-
-      th .emoji {
-        font-size: 1.5em;
-        margin-right: 6px;
-      }
-
-      td img {
-        max-width: 100%;
-        height: auto;
-        cursor: pointer;
-        border-radius: 6px;
-        transition: transform 0.2s ease;
-      }
-
-      td img:hover {
-        transform: scale(1.05);
-      }
-
-      /* Стили для увеличенного изображения (оверлей) */
-      .lightzoom-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.8);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      }
-
-      .lightzoom-overlay img {
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 8px;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-      }
-
-      .lightzoom-overlay.active {
-        display: flex;
-      }
-
-      .lightzoom-close {
-        position: fixed;
-        top: 20px;
-        right: 30px;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        user-select: none;
-        z-index: 10000;
-      }
-
-      /* Адаптивность для мелких экранов */
-      @media (max-width: 600px) {
-        h1 {
-          font-size: 1.5rem;
-          margin-bottom: 20px;
-        }
-        /* Таблица в обёртке будет скроллиться по горизонтали */
-        .table-wrap {
-          padding: 5px;
-        }
-        table {
-          min-width: 500px;
-        }
-      }
-    </style>
   </head>
   <body>
     <h1>Челлендж 30 рисунков</h1>
@@ -141,11 +21,7 @@
         <tbody>
           <tr>
             <td>
-              <img
-                src="images/raccoon1_thumb.jpg"
-                alt="Енот 1"
-                data-full="images/raccoon1.jpg"
-              />
+              <img src="./j0.jpeg" alt="Енот 1" data-full="./j0.jpeg" />
             </td>
             <td>
               <img
@@ -166,36 +42,6 @@
                 src="images/fox1_thumb.jpg"
                 alt="Лиса 1"
                 data-full="images/fox1.jpg"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img
-                src="images/raccoon2_thumb.jpg"
-                alt="Енот 2"
-                data-full="images/raccoon2.jpg"
-              />
-            </td>
-            <td>
-              <img
-                src="images/owl2_thumb.jpg"
-                alt="Сова 2"
-                data-full="images/owl2.jpg"
-              />
-            </td>
-            <td>
-              <img
-                src="images/wolf2_thumb.jpg"
-                alt="Волк 2"
-                data-full="images/wolf2.jpg"
-              />
-            </td>
-            <td>
-              <img
-                src="images/fox2_thumb.jpg"
-                alt="Лиса 2"
-                data-full="images/fox2.jpg"
               />
             </td>
           </tr>
@@ -241,3 +87,124 @@
     </script>
   </body>
 </html>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    margin: 20px;
+    color: #222;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+  }
+
+  /* Заголовок страницы */
+  h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+  }
+
+  /* Обёртка для таблицы с адаптивной прокруткой */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* плавный скролл для iOS */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    background: white;
+    padding: 10px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    min-width: 600px; /* чтобы при малой ширине была прокрутка */
+  }
+
+  th,
+  td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+  }
+
+  th {
+    background: #f0f0f0;
+    font-size: 1.2em;
+  }
+
+  th .emoji {
+    font-size: 1.5em;
+    margin-right: 6px;
+  }
+
+  td img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+  }
+
+  td img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Стили для увеличенного изображения (оверлей) */
+  .lightzoom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .lightzoom-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+
+  .lightzoom-overlay.active {
+    display: flex;
+  }
+
+  .lightzoom-close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10000;
+  }
+
+  /* Адаптивность для мелких экранов */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    /* Таблица в обёртке будет скроллиться по горизонтали */
+    .table-wrap {
+      padding: 5px;
+    }
+    table {
+      min-width: 500px;
+    }
+  }
+</style>
