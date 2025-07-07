@@ -20,23 +20,64 @@
           </tr>
         </thead>
         <tbody>
+          <!-- Day 6 -->
+          <tr>
+            <td><img src="./img/j6.jpg" data-full="./img/j6.jpg" /></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <!-- Day 5 -->
+          <tr>
+            <td><img src="./img/j5.jpg" data-full="./img/j5.jpg" /></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <!-- Day 4 -->
+          <tr>
+            <td><img src="./img/j4.jpg" data-full="./img/j4.jpg" /></td>
+            <td>
+              <img src="./img/m4.jpg" data-full="./img/m4.jpg" />
+            </td>
+            <td>
+              <img src="./img/a4.jpg" data-full="./img/a4.jpg" />
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+          <!-- Day 3 -->
+          <tr>
+            <td><img src="./img/j3.jpg" data-full="./img/j3.jpg" /></td>
+            <!-- <td><img src="./img/catHz.jpeg" /></td> -->
+            <td>
+              <img src="./img/m3.jpg" data-full="./img/m3.jpg" />
+            </td>
+            <td>
+              <img src="./img/a3.jpg" data-full="./img/a3.jpg" />
+            </td>
+            <td><img src="./img/o3.jpg" data-full="./img/o3.jpg" /></td>
+            <td><img src="./img/e3.jpg" data-full="./img/e3.jpg" /></td>
+          </tr>
+          <!-- Day 2 -->
           <tr>
             <td>
-              <img src="./img/j0.jpeg" data-full="./img/j0.jpeg" />
+              <img src="./img/j2.jpg" data-full="./img/j2.jpg" />
+            </td>
+            <td><img src="./img/m2.jpg" data-full="./img/m2.jpg" /></td>
+            <td>
+              <img src="./img/a2.jpg" data-full="./img/a2.jpg" />
             </td>
             <td>
-              <img src="./img/m0.jpeg" data-full="./img/m0.jpeg" />
+              <img src="./img/o2.jpg" data-full="./img/o2.jpg" />
             </td>
             <td>
-              <img src="./img/a0.jpeg" data-full="./img/a0.jpeg" />
-            </td>
-            <td>
-              <img src="./img/o0.jpeg" data-full="./img/o0.jpeg" />
-            </td>
-            <td>
-              <img src="./img/e0.jpg" data-full="./img/e0.jpg" />
+              <img src="./img/e2.jpg" data-full="./img/e2.jpg" />
             </td>
           </tr>
+          <!-- Day 1 -->
           <tr>
             <td>
               <img src="./img/j1.jpeg" data-full="./img/j1.jpeg" />
@@ -54,50 +95,23 @@
               <img src="./img/e1.jpg" data-full="./img/e1.jpg" />
             </td>
           </tr>
+          <!-- Day 0 -->
           <tr>
             <td>
-              <img src="./img/j2.jpg" data-full="./img/j2.jpg" />
-            </td>
-            <td><img src="./img/m2.jpg" data-full="./img/m2.jpg" /></td>
-            <td>
-              <img src="./img/a2.jpg" data-full="./img/a2.jpg" />
+              <img src="./img/j0.jpeg" data-full="./img/j0.jpeg" />
             </td>
             <td>
-              <img src="./img/o2.jpg" data-full="./img/o2.jpg" />
+              <img src="./img/m0.jpeg" data-full="./img/m0.jpeg" />
             </td>
             <td>
-              <img src="./img/e2.jpg" data-full="./img/e2.jpg" />
-            </td>
-          </tr>
-          <tr>
-            <td><img src="./img/j3.jpg" data-full="./img/j3.jpg" /></td>
-            <!-- <td><img src="./img/catHz.jpeg" /></td> -->
-            <td>
-              <img src="./img/m3.jpg" data-full="./img/m3.jpg" />
+              <img src="./img/a0.jpeg" data-full="./img/a0.jpeg" />
             </td>
             <td>
-              <img src="./img/a3.jpg" data-full="./img/a3.jpg" />
-            </td>
-            <td><img src="./img/o3.jpg" data-full="./img/o3.jpg" /></td>
-            <td><img src="./img/e3.jpg" data-full="./img/e3.jpg" /></td>
-          </tr>
-          <tr>
-            <td><img src="./img/j4.jpg" data-full="./img/j4.jpg" /></td>
-            <td>
-              <img src="./img/m4.jpg" data-full="./img/m4.jpg" />
+              <img src="./img/o0.jpeg" data-full="./img/o0.jpeg" />
             </td>
             <td>
-              <img src="./img/a4.jpg" data-full="./img/a4.jpg" />
+              <img src="./img/e0.jpg" data-full="./img/e0.jpg" />
             </td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><img src="./img/j5.jpg" data-full="./img/j5.jpg" /></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
           </tr>
         </tbody>
       </table>
@@ -136,6 +150,14 @@
             $("#lightzoomImage").attr("src", "");
             $("body").css("overflow", "");
           }
+        });
+
+        const rows = document.querySelectorAll("tr");
+        const totalRows = rows.length;
+
+        rows.forEach((row, index) => {
+          const counterValue = totalRows - index - 1; // начинаем с 6, если всего 7 строк
+          row.style.setProperty("--counter", `"#${counterValue}"`);
         });
       });
     </script>
@@ -187,6 +209,7 @@
     vertical-align: top;
     border: 1px solid #ddd;
     word-wrap: break-word;
+    position: relative;
   }
 
   th {
@@ -276,5 +299,20 @@
 
   .thead {
     background: #fff;
+  }
+  tr td::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: var(--counter);
+    width: 100%;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    color: #fff;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
